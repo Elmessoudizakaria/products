@@ -24,17 +24,20 @@ export class ProductListComponent implements OnInit {
   selectedProducts: Product[] = [];
   selectedProductChannel = new BroadcastChannel('selected-product-channel');
   selectedCategorieChannel = new BroadcastChannel('selected-categorie');
-
+  searchChannel = new BroadcastChannel('search-channel');
+  filter = '';
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.selectedCategorieChannel.addEventListener('message', (evt) => {
-      console.log('CAT ', evt.data);
       this.loadPorducts(evt.data);
+    });
+    this.searchChannel.addEventListener('message', (evt) => {
+      this.filter = evt.data;
     });
   }
 
-  loadPorducts(categoryId: number) {
+  loadPorducts(categoryId: string) {
     this.products$ = this.productService.loadPorductsByCategory(categoryId);
   }
 

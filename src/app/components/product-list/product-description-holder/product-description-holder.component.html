@@ -1,4 +1,4 @@
-<div *ngIf="product" class="desc-container">
+<div *ngIf="product" class="desc-container" [ngClass]="{ 'selected': selected }">
   <span class="title">{{ product.title }}</span>
   <!-- <span class="description">{{ product.description }}</span> -->
   <div class="price">

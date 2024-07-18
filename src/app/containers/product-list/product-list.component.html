@@ -1,13 +1,14 @@
-<div *ngIf="products$ | async as products" class="products-container">
+<div
+  *ngIf="(products$ | async)?.products as products"
+  class="products-container"
+>
   <!-- item -->
-  <div
-    *ngFor="let product of products"
-    class="product-item elevated-cart"
-    [ngClass]="{ selected: isSelected(product.id) }"
-  >
+  <div *ngFor="let product of products | productFilter : filter" class="product-item elevated-cart">
     <!-- img holder -->
     <div class="img-holder">
-      <app-product-img-holder [imges]="product.images"></app-product-img-holder>
+      <app-product-img-holder
+        [imge]="product.thumbnail"
+      ></app-product-img-holder>
     </div>
     <!-- description holder -->
     <div class="desc-holder">

@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product-img-holder.component.scss',
 })
 export class ProductImgHolderComponent {
-  @Input() imges: string[] = [];
+  @Input() imge: string = '';
 }
