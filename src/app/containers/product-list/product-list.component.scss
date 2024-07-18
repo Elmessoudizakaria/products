@@ -1,12 +1,13 @@
 .products-container {
   display: flex;
-  justify-content: space-evenly;
+  gap: 3%;
   flex-wrap: wrap;
   width: 90%;
   margin-left: 5%;
   .product-item {
+    border: 1px solid #ddd;
+    text-align: center;
     width: 17%;
-    height: 330px;
     margin-bottom: 15px;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -14,7 +15,6 @@
     flex-direction: column;
     gap: 5px;
     box-sizing: border-box;
-    cursor: pointer;
     .img-holder {
       height: 75%;
     }
@@ -38,4 +38,19 @@
 .elevated-cart:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2),
     0 16px 32px rgba(0, 0, 0, 0.2), 0 32px 64px rgba(0, 0, 0, 0.2);
+}
+
+.selected {
+  background: #f4d8f5;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

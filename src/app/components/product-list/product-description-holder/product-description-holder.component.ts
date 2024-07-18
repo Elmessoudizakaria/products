@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Product } from '@shared/product.interface';
 
 @Component({
@@ -12,4 +18,14 @@ import { Product } from '@shared/product.interface';
 })
 export class ProductDescriptionHolderComponent {
   @Input() product: Product | undefined;
+  @Input() selected = false;
+  @Output() selectProduct = new EventEmitter<Product>();
+  @Output() unselectProduct = new EventEmitter<number>();
+
+  addCart() {
+    this.selectProduct.emit(this.product);
+  }
+  cancel() {
+    this.unselectProduct.emit(this.product?.id);
+  }
 }

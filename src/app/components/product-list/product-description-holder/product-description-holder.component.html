@@ -3,6 +3,9 @@
   <!-- <span class="description">{{ product.description }}</span> -->
   <div class="price">
     <span>{{ product.price | currency }}</span
-    ><button>add cart</button>
+    ><button (click)="selected ? cancel() : addCart()">
+      <span *ngIf="!selected">add cart</span>
+      <span *ngIf="selected">cancel</span>
+    </button>
   </div>
 </div>

@@ -10,8 +10,8 @@ span {
   justify-content: space-between;
 }
 .title {
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .description {
@@ -31,6 +31,30 @@ span {
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
+    min-width: 100px;
     cursor: pointer;
+  }
+}
+
+.product-name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
   }
 }

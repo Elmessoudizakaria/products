@@ -6,7 +6,7 @@ import { Product } from './product.interface';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  loadPorductsByCategory(categoryId: number = 1) {
+  loadPorductsByCategory(categoryId: number = 2) {
     return this.http.get<Product[]>(
       `https://api.escuelajs.co/api/v1/products?offset=0&limit=10&categoryId=${categoryId}`
     );
