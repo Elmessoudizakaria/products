@@ -1,0 +1,15 @@
+<div *ngIf="products$ | async as products" class="products-container">
+  <!-- item -->
+  <div *ngFor="let product of products" class="product-item elevated-cart">
+    <!-- img holder -->
+    <div class="img-holder">
+      <app-product-img-holder [imges]="product.images"></app-product-img-holder>
+    </div>
+    <!-- description holder -->
+    <div class="desc-holder">
+      <app-product-description-holder
+        [product]="product"
+      ></app-product-description-holder>
+    </div>
+  </div>
+</div>
